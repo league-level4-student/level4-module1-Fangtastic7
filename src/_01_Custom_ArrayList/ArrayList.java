@@ -1,23 +1,27 @@
 package _01_Custom_ArrayList;
 
+import _00_Intro_To_Templates.*;
+
 @SuppressWarnings("unchecked")
 
 public class ArrayList <T>{
 	
 	public ArrayList() {
+		
 	}
 	
 	public T get(int loc) throws IndexOutOfBoundsException {
-		
+		t.get(loc);
 		return null;
 	}
 	
 	public void add(T val) {
 		
+		
 	}
 	
 	public void insert(int loc, T val) throws IndexOutOfBoundsException {
-		
+	
 	}
 	
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
@@ -29,7 +33,14 @@ public class ArrayList <T>{
 	}
 	
 	public boolean contains(T val) {
-		
+		if(t.contains(val)) {
+			return true;
+		}
 		return false;
+	}
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
