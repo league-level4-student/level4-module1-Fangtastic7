@@ -5,18 +5,19 @@ import _00_Intro_To_Templates.*;
 @SuppressWarnings("unchecked")
 
 public class ArrayList <T>{
+	T list;
+	
 	
 	public ArrayList() {
-		
+		this.list = list;
 	}
 	
 	public T get(int loc) throws IndexOutOfBoundsException {
-		t.get(loc);
+		
 		return null;
 	}
 	
 	public void add(T val) {
-		
 		
 	}
 	
@@ -33,9 +34,7 @@ public class ArrayList <T>{
 	}
 	
 	public boolean contains(T val) {
-		if(t.contains(val)) {
-			return true;
-		}
+		
 		return false;
 	}
 
