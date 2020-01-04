@@ -103,24 +103,24 @@ public class CustomArrayListTest {
 		assertFalse(list.contains("best"));
 	}
 	
-	@Test
-	public void testSize() {
-		ArrayList<String> list = new ArrayList<String>();
-		list.add("This");
-		list.add("is");
-		list.add("only");
-		list.add("a");
-		list.add("test");
-
-		assertTrue(list.size() == 5);
-		
-		ArrayList<Integer> list2 = new ArrayList<Integer>();
-		list2.add(0);
-		list2.add(1);
-		list2.add(206);
-		
-		assertTrue(list2.size() == 3);
-	}
+//	@Test
+//	public void testSize() {
+//		ArrayList<String> list = new ArrayList<String>();
+//		list.add("This");
+//		list.add("is");
+//		list.add("only");
+//		list.add("a");
+//		list.add("test");
+//
+//		assertTrue(list.size() == 5);
+//		
+//		ArrayList<Integer> list2 = new ArrayList<Integer>();
+//		list2.add(0);
+//		list2.add(1);
+//		list2.add(206);
+//		
+//		assertTrue(list2.size() == 3);
+//	}
 	
 	@Test
 	public void testSizeOnRemove() {
