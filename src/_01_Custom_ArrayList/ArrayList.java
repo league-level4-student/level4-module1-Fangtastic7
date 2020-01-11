@@ -56,13 +56,13 @@ public class ArrayList <T>{
 	
 	
 	public boolean contains(T val) {
-		
-		if(list == val) {
-			return  true;
+		for(int i=0; i < list.length; i++) {
+			if(list[i] == val) {
+				return true;
+			}
 		}
-		else {
-			return false;
-		}
+		return false;
+	
 		
 		
 			
@@ -73,6 +73,6 @@ public class ArrayList <T>{
 
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return list.length;
 	}
 }
