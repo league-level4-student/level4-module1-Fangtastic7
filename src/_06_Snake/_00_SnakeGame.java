@@ -150,6 +150,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//   use the snake's isLocationOnSnake method to make sure you don't put the food on the snake
 		foodLocation = newlocation;
 		snake.isLocationOnSnake(newlocation);
+		//if-statement
 	}
 
 	private void gameOver() {
