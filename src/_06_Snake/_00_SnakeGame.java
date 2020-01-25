@@ -27,9 +27,9 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 	public static final int WINDOW_SCALE = 50;
 	public static final int WINDOW_WIDTH = WINDOW_SCALE * WIDTH;
 	public static final int WINDOW_HEIGHT = WINDOW_SCALE * HEIGHT;
-	private final int easyspeed = 5;
-	private final int mediumspeed = 8;
-	private final int hardspeed = 10;
+	private final int easyspeed = 1000/2;
+	private final int mediumspeed = 500/2;
+	private final int hardspeed = 100;
 	
 	private JFrame window;
 	private JPanel panel;
@@ -149,8 +149,11 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//2. set the foodLocation variable equal to the Location object you just created.
 		//   use the snake's isLocationOnSnake method to make sure you don't put the food on the snake
 		foodLocation = newlocation;
-		snake.isLocationOnSnake(newlocation);
-		//if-statement
+		
+		if(snake.isLocationOnSnake(newlocation)) {
+			setFoodLocation();
+		}
+		
 	}
 
 	private void gameOver() {
@@ -169,6 +172,8 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		Location origin = new Location(WIDTH / 2, HEIGHT / 2);
 		if(response == 0) {
 			snake.reset(origin);
+			setFoodLocation();
+			timer.start();
 		}
 		else {
 			System.exit(0);
@@ -187,13 +192,16 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		snake.update();
 		//2. if the snake is colliding with its own body 
 		//   or if the snake is out of bounds, call gameOver
-		if(snake.isHeadCollidingWithBody() || snake.isOutOfBounds()) {
+		if(snake.isHeadCollidingWithBody()) {
+			gameOver();
+		}
+		else if(snake.isOutOfBounds()) {
 			gameOver();
 		}
 		
 		//3. if the location of the head is equal to the location of the food,
 		// 	 feed the snake and set the food location
-		if(snake.getHeadLocation()==foodLocation) {
+		else if(snake.getHeadLocation().x == foodLocation.x && snake.getHeadLocation().y == foodLocation.y) {
 			snake.feed();
 			 setFoodLocation();
 		}

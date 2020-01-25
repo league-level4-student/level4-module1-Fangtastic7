@@ -59,8 +59,10 @@ public class Snake {
 		//2. Iterate through the SnakeSegments in reverse order
 		//2a. Update each snake segment to the location of the segment 
 		//    in front of it.
-		for(int i = snake.size(); i == 0;  i--) {
-			snake.set(i, snake.get(i-1));
+		for(int i = snake.size()-1; i >= 1;  i--) {
+		
+			snake.get(i).setLocation(new Location(snake.get(i-1).getLocation().x, snake.get(i-1).getLocation().y));
+			
 		}
 		
 		//3. set the location of the head to the new location calculated in step 1
@@ -78,6 +80,7 @@ public class Snake {
 			currentDirection = d;
 			canMove = false;
 		}
+		
 		
 	}
 
@@ -97,7 +100,6 @@ public class Snake {
 		if(head.getLocation().x > _00_SnakeGame.WINDOW_WIDTH || head.getLocation().x < 0 || head.getLocation().y > _00_SnakeGame.WINDOW_HEIGHT || head.getLocation().y < 0) {
 			return true;
 		}
-			
 		return false;
 	}
 	
