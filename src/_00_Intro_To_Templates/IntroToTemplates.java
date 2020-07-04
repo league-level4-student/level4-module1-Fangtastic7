@@ -23,6 +23,7 @@ public class IntroToTemplates {
 		//define its template variable to be two different types, String and Integer
 		SomeClass<String> scObj = new SomeClass<String>("sodapop");
 		SomeClass<Integer> scObj2 = new SomeClass<Integer>(412);
+		SomeClass<Integer> scObj3 = new SomeClass<Integer>(5);
 	}
 	
 	//Here a template called Template is created as part of the calcStuff method
